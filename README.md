@@ -1,8 +1,8 @@
-# 🎬 Sentiment Analysis: Naive Bayes vs SVM (LinearSVC)
+# Sentiment Analysis: Naive Bayes vs SVM (LinearSVC)
 
 Proyek ini adalah implementasi Machine Learning untuk melakukan Analisis Sentimen pada dataset ulasan film IMDb (50.000 data). Proyek ini membandingkan kinerja antara algoritma probabilistik (**Naive Bayes**) dan algoritma berbasis margin (**Support Vector Machine**).
 
-## 📊 Hasil Eksperimen
+## Hasil Eksperimen
 
 Berdasarkan pengujian pada 10.000 data uji (20% split), berikut adalah perbandingan kinerjanya:
 
@@ -11,7 +11,7 @@ Berdasarkan pengujian pada 10.000 data uji (20% split), berikut adalah perbandin
 | **Naive Bayes** | 84.87% | Sangat Cepat | Baik sebagai baseline, namun cenderung memiliki False Positive lebih tinggi. |
 | **SVM (Linear)**| 88.61% | Cepat | Memberikan akurasi terbaik dan generalisasi yang lebih kuat pada data teks dimensi tinggi. |
 
-## 🛠️ Teknologi yang Digunakan
+## Teknologi yang Digunakan
 
 * **Bahasa:** Python 3.10+
 * **Environment:** Virtual Environment (venv)
@@ -21,7 +21,7 @@ Berdasarkan pengujian pada 10.000 data uji (20% split), berikut adalah perbandin
     * `nltk`: Preprocessing (Stopwords, Tokenization)
     * `seaborn` & `matplotlib`: Visualisasi Data
 
-## 🚀 Cara Menjalankan Project
+## Cara Menjalankan Project
 
 1.  **Clone Repositori**
     ```bash
@@ -44,7 +44,7 @@ Berdasarkan pengujian pada 10.000 data uji (20% split), berikut adalah perbandin
 4.  **Jalankan Notebook**
     Buka file `analisis_sentimen.ipynb` menggunakan VS Code atau Jupyter Notebook.
 
-## 📈 Metodologi
+## Metodologi
 1.  **Preprocessing:** Cleaning (Regex), Lowercasing.
 2.  **Feature Extraction:** TF-IDF Vectorizer (Max features: 5000).
 3.  **Modeling:** Komparasi Multinomial Naive Bayes vs LinearSVC.
