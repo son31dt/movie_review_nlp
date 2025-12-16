@@ -1,0 +1,9 @@
+# Abaikan virtual environment
+venv/
+
+# Abaikan dataset besar
+*.csv
+
+# Abaikan cache Python
+__pycache__/
+*.ipynb_checkpoints/
