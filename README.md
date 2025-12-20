@@ -49,6 +49,8 @@ movie_review_nlp/
     ├── tfidf_vectorizer.pkl
     ├── nb_model.pkl
     └── svm_model.pkl
+```
+
 
 ## 🛠️ Installation & Usage
 
