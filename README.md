@@ -1,39 +1,75 @@
-# Sentiment Analysis: Naive Bayes vs SVM (LinearSVC)
+# 🎬 Movie Sentiment Analysis System (NLP)
 
-Proyek ini adalah implementasi Machine Learning untuk melakukan Analisis Sentimen pada dataset ulasan film IMDb (50.000 data). Proyek ini membandingkan kinerja antara algoritma probabilistik (**Naive Bayes**) dan algoritma berbasis margin (**Support Vector Machine**).
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-FF4B4B)
+![Scikit-Learn](https://img.shields.io/badge/Library-Scikit--Learn-orange)
 
-## Hasil Eksperimen
+A comprehensive Sentiment Analysis project comparing **Naive Bayes** and **Support Vector Machine (LinearSVC)** models on 50,000 IMDb movie reviews. This project includes a complete machine learning pipeline from data preprocessing to a deployable web application.
 
-Berdasarkan pengujian pada 10.000 data uji (20% split), berikut adalah perbandingan kinerjanya:
+## 🚀 Live Demo
 
-| Model | Akurasi | Waktu Training | Kesimpulan |
-|-------|---------|----------------|------------|
-| **Naive Bayes** | 84.87% | Sangat Cepat | Baik sebagai baseline, namun cenderung memiliki False Positive lebih tinggi. |
-| **SVM (Linear)**| 88.61% | Cepat | Memberikan akurasi terbaik dan generalisasi yang lebih kuat pada data teks dimensi tinggi. |
+Check out the running application here:
+👉 **https://sentimen-film-nlp.streamlit.app**
 
-## Teknologi yang Digunakan
+---
 
-* **Bahasa:** Python 3.10+
-* **Environment:** Virtual Environment (venv)
-* **Library Utama:**
-    * `scikit-learn`: Modeling (MultinomialNB, LinearSVC) & TF-IDF
-    * `pandas` & `numpy`: Manipulasi Data
-    * `nltk`: Preprocessing (Stopwords, Tokenization)
-    * `seaborn` & `matplotlib`: Visualisasi Data
+## 📊 Project Overview
 
-## Cara Menjalankan Project
+This system classifies movie reviews as either **Positive** or **Negative**. It serves as a comparative study to determine which algorithm performs better in terms of accuracy and computational efficiency.
 
-1.  **Clone Repositori**
+### Key Features:
+* **Text Preprocessing:** Regex-based cleaning, lowercasing, and noise removal.
+* **Feature Extraction:** TF-IDF Vectorization (Top 5,000 features).
+* **Modeling:** Comparison between Probabilistic (Naive Bayes) and Geometric (SVM) approaches.
+* **Web Interface:** Interactive frontend built with **Streamlit** for real-time sentiment prediction.
+
+---
+
+## 🏆 Model Performance
+
+Based on the test set (20% split), here are the evaluation results:
+
+| Model | Accuracy | Training Time | Prediction Time | Verdict |
+| :--- | :--- | :--- | :--- | :--- |
+| **Naive Bayes** | 84.87% | ~0.05s | ~0.009s | Very fast, suitable for low-resource systems. |
+| **SVM (Linear)**| **88.61%** | ~2.25s | ~0.007s | **Best Accuracy**, robust generalization. |
+
+---
+
+## 📂 Project Structure
+
+```text
+movie_review_nlp/
+├── app.py                   # Main Streamlit application
+├── analisis_sentimen.ipynb  # Jupyter Notebook for training & analysis
+├── requirements.txt         # List of dependencies
+├── README.md                # Project documentation
+├── .gitignore               # Git configuration
+└── models/                  # Saved serialized models (.pkl)
+    ├── tfidf_vectorizer.pkl
+    ├── nb_model.pkl
+    └── svm_model.pkl
+
+## 🛠️ Installation & Usage
+
+If you want to run this project locally on your machine:
+
+1.  **Clone the repository**
     ```bash
     git clone [https://github.com/son31dt/movie_review_nlp.git](https://github.com/son31dt/movie_review_nlp.git)
     cd movie_review_nlp
     ```
 
-2.  **Setup Environment**
+2.  **Create a Virtual Environment**
     ```bash
+    # Create the environment
     python -m venv venv
-    source venv/Scripts/activate  # Untuk Windows (Git Bash/Warp)
-    # atau: venv\Scripts\activate # Untuk Windows (CMD)
+
+    # Activate the environment (Windows Git Bash/Warp):
+    source venv/Scripts/activate
+
+    # Activate the environment (Windows CMD):
+    # venv\Scripts\activate
     ```
 
 3.  **Install Dependencies**
@@ -41,11 +77,16 @@ Berdasarkan pengujian pada 10.000 data uji (20% split), berikut adalah perbandin
     pip install -r requirements.txt
     ```
 
-4.  **Jalankan Notebook**
-    Buka file `analisis_sentimen.ipynb` menggunakan VS Code atau Jupyter Notebook.
+4.  **Run the Streamlit App**
+    ```bash
+    streamlit run app.py
+    ```
 
-## Metodologi
-1.  **Preprocessing:** Cleaning (Regex), Lowercasing.
-2.  **Feature Extraction:** TF-IDF Vectorizer (Max features: 5000).
-3.  **Modeling:** Komparasi Multinomial Naive Bayes vs LinearSVC.
-4.  **Evaluasi:** Akurasi, Confusion Matrix, dan Waktu Eksekusi.
+---
+
+## 🧠 Methodology (Data Flow)
+
+1.  **Input:** Raw text data from IMDb Dataset.
+2.  **Preprocessing:** Cleaning HTML tags and non-alphabetical characters using Regex.
+3.  **Training:** TF-IDF transformation followed by model fitting (Naive Bayes & SVM).
+4.  **Deployment:** The best-performing model is saved (`.pkl`) and loaded into the Streamlit app for inference.
